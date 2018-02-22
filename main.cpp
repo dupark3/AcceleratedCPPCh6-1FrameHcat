@@ -2,6 +2,8 @@
 #include <string>
 #include <vector>
 
+typedef std::vector<std::string>::size_type vec_size;
+
 int main() {
     std::cout << "Input first set of lines to frame: " << std::endl;
     std::vector<std::string> firstPicture;
@@ -11,7 +13,11 @@ int main() {
         firstPicture.push_back(s);
 
     // Pass first picture to frame function, which will add asterisks around with padding, left-aligned
-    frame(firstPicture);
+    std::vector<std::string> framedFirst = frame(firstPicture);
+
+    while(vec_size i = 0; i != framedFirst.size(); ++i)
+        std::cout << framedFirst[i] << std::endl;
+
 
     // Store second input in vector
     std::cout << "Input second set of lines to horizontally concatenate: " << std::endl;
