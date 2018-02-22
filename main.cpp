@@ -3,6 +3,7 @@
 #include <vector>
 
 #include "frame.h"
+#include "hcat.h"
 
 typedef std::vector<std::string>::const_iterator vec_iter;
 
@@ -16,11 +17,8 @@ int main() {
 
     // Pass first picture to frame function, which will add asterisks around with padding, left-aligned
     std::vector<std::string> framedFirst = frame(firstPicture);
-    // std::cout << framedFirst[0] << std::endl;
-    //std::cout << framedFirst[1] << std::endl;
-    //std::cout << framedFirst[2] << std::endl;
-    //std::cout << framedFirst[3] << std::endl;
 
+    // Print result of framing using iterators
     for(vec_iter i = framedFirst.begin(); i != framedFirst.end(); ++i)
         std::cout << *i << std::endl;
 
@@ -31,7 +29,10 @@ int main() {
         secondPicture.push_back(s);
 
     // Pass first and second pictures to hcat function, which will print both pictures next to each other.
-    // hcat(firstPicture, secondPicture);
+    std::vector<std::string> hcatResult = hcat(firstPicture, secondPicture);
+
+    for(vec_iter i = hcatResult.begin(); i != hcatResult.end(); ++i)
+        std::cout << *i << std::endl;
 
     return 0;
 }
