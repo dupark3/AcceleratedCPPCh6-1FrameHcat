@@ -6,10 +6,6 @@
 #include "frame.h"
 #include "width.h"
 
-typedef std::string::iterator string_iter;
-typedef std::vector<std::string>::const_iterator vec_iter;
-typedef std::string::size_type string_size;
-
 std::vector<std::string> frame(const std::vector<std::string>& original){
     std::vector<std::string> framed;
     string_size maxLen = width(original);

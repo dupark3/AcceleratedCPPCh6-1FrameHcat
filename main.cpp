@@ -4,8 +4,7 @@
 
 #include "frame.h"
 #include "hcat.h"
-
-typedef std::vector<std::string>::const_iterator vec_iter;
+#include "width.h"
 
 int main() {
     std::cout << "Input first set of lines to frame: " << std::endl;
@@ -23,6 +22,7 @@ int main() {
         std::cout << *i << std::endl;
 
     // Store second input in vector
+    std::cin.clear();
     std::cout << "Input second set of lines to horizontally concatenate: " << std::endl;
     std::vector<std::string> secondPicture;
     while(getline(std::cin, s))
